@@ -202,6 +202,11 @@
 				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW;
 				var $endURL = $server + "end?" + $params + "&checksum=" + $.sha1("end" + $params + $salt);
 				
+                $params = "meetingID=" + $meetingID;
+                var $getRecordingsURL = $server + "getRecordings?" + $params + "&checksum=" + $.sha1("getRecordings" + $params + $salt);				
+
+                $params = "meetingID=";
+                var $getAllRecordingsURL = $server + "getRecordings?" + $params + "&checksum=" + $.sha1("getRecordings" + $params + $salt);				
 				
 				//Displays the links in a table
 				$("#links_table").remove();		//if the tables already exists it removes it
@@ -214,15 +219,16 @@
 				$("#links_table").append('<tr><td>getMeetingInfo</td> <td><a href="' + $getMeetingInfoURL + '" target="_blank">' + $getMeetingInfoURL + '</a></td>');
 				$("#links_table").append('<tr><td>getMeetings</td> <td><a href="' + $getMeetingsURL + '" target="_blank">' + $getMeetingsURL + '</a></td>');
 				$("#links_table").append('<tr><td>end</td> <td><a href="' + $endURL + '" target="_blank">' + $endURL + '</a></td>');
+                $("#links_table").append('<tr><td>Get Recordings for ' + $meetingID + '</td> <td><a href="' + $getRecordingsURL + '" target="_blank">' + $getRecordingsURL + '</a></td>');
+                $("#links_table").append('<tr><td>Get All Recordings</td> <td><a href="' + $getAllRecordingsURL + '" target="_blank">' + $getAllRecordingsURL + '</a></td>');
 				if ($("#advanced_form").length){
-                                    $("#links_table").append('<tr><td>getRecordings</td> <td><a href="' + $getRecordingsURL + '" target="_blank">' + $getRecordingsURL + '</a></td>');
                                     
-                                    if ( $recordID ){
-                                        $("#links_table").append('<tr><td>setPublishRecordings[publish]</td> <td><a href="' + $publishRecordingsURL + '" target="_blank">' + $publishRecordingsURL + '</a></td>');
-                                        $("#links_table").append('<tr><td>setPublishRecordings[unpublish]</td> <td><a href="' + $unpublishRecordingsURL + '" target="_blank">' + $unpublishRecordingsURL + '</a></td>');
-                                        $("#links_table").append('<tr><td>deleteRecordings</td> <td><a href="' + $deleteRecordingsURL + '" target="_blank">' + $deleteRecordingsURL + '</a></td>');
-                                    }
-                                }
+                    if ( $recordID ){
+                        $("#links_table").append('<tr><td>setPublishRecordings[publish]</td> <td><a href="' + $publishRecordingsURL + '" target="_blank">' + $publishRecordingsURL + '</a></td>');
+                        $("#links_table").append('<tr><td>setPublishRecordings[unpublish]</td> <td><a href="' + $unpublishRecordingsURL + '" target="_blank">' + $unpublishRecordingsURL + '</a></td>');
+                        $("#links_table").append('<tr><td>deleteRecordings</td> <td><a href="' + $deleteRecordingsURL + '" target="_blank">' + $deleteRecordingsURL + '</a></td>');
+                    }
+                }
 				
 				//alert('Handler for .submit() called.' + $server);
 				//return false;				
