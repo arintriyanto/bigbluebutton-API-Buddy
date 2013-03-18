@@ -37,19 +37,19 @@
 				<table id="basic_form" >
 					<tr>
 						<td id="field">Server</td>
-						<td><input type="text" size="60" id="server" value="http://test-install.blindsidenetworks.com/bigbluebutton/api/"/></td>
+						<td><input type="text" size="60" id="server" value="http://192.168.0.172/bigbluebutton/api/"/></td>
 					</tr>
 					<tr>
 						<td id="field">Salt</td>
-						<td><input type="text" size="60" id="salt" value="8cd8ef52e8e101574e400365b55e11a6"/></td>
+						<td><input type="text" size="60" id="salt" value="f4eb0d5912a682efd57fb33c88d074e4"/></td>
 					</tr>
 					<tr>
 						<td id="field">Meeting ID</td>
-						<td><input type="text"  size="60" id="meetingID" value="1234567890"/></td>
+						<td><input type="text"  size="60" id="meetingID" value="d03aa-b4a25-46846-e4025-84ea8"/></td>
 					</tr>
 					<tr>
 						<td id="field">Meeting Name</td>
-						<td><input type="text" size="60" id="meetingName" value="Test"/></td>
+						<td><input type="text" size="60" id="meetingName" value="Demo Meeting"/></td>
 					</tr>
 					<tr>
 						<td id="field">Moderator Password</td>
@@ -95,10 +95,49 @@
 			<p id="legal"><strong>Written by <a href="http://omarshammas.com" target="_blank">Omar Shammas</a>, &nbsp; and images &copy; <a href="http://bigbluebutton.org" target="_blank">BigBlueButton Inc</a> 2011</strong></p>
 		</div>
 		
-		<script>
-		
-			
-			
+      <script>
+      var $configXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> \
+<config> \
+  <localeversion suppressWarning=\"false\">0.8</localeversion> \
+  <version>4084-2013-01-30</version> \
+  <help url=\"http://192.168.0.172/help.html\"/> \
+  <porttest host=\"192.168.0.172\" application=\"video\" timeout=\"10000\"/> \
+  <application uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172/bigbluebutton/api/enter\" /> \
+  <language userSelectionEnabled=\"true\" /> \
+  <skinning enabled=\"true\" url=\"http://192.168.0.172/client/branding/css/BBBDefault.css.swf\" /> \
+  <layout showLogButton=\"false\" showVideoLayout=\"false\" showResetLayout=\"true\" defaultLayout=\"Default\" showToolbar=\"true\" showFooter=\"true\" showHelpButton=\"true\" showLogoutWindow=\"true\"/> \
+  <modules> \
+    <module name=\"ChatModule\" url=\"http://192.168.0.172/client/ChatModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" dependsOn=\"ViewersModule\" translationOn=\"false\" translationEnabled=\"false\" privateEnabled=\"true\"  position=\"top-right\"/> \
+    <module name=\"ViewersModule\" url=\"http://192.168.0.172/client/ViewersModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172/bigbluebutton/api/enter\" allowKickUser=\"false\" /> \
+    <module name=\"ListenersModule\" url=\"http://192.168.0.172/client/ListenersModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" recordingHost=\"http://192.168.0.172\" position=\"bottom-left\" /> \
+    <module name=\"DeskShareModule\" url=\"http://192.168.0.172/client/DeskShareModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/deskShare\" autoStart=\"false\" /> \
+    <module name=\"PhoneModule\" url=\"http://192.168.0.172/client/PhoneModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/sip\" autoJoin=\"true\" skipCheck=\"false\" showButton=\"true\" enabledEchoCancel=\"true\" dependsOn=\"ViewersModule\" /> \
+    <module name=\"VideoconfModule\" url=\"http://192.168.0.172/client/VideoconfModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/video\" dependson = \"ViewersModule\" videoQuality = \"100\" presenterShareOnly = \"false\" controlsForPresenter = \"false\" resolutions = \"320x240,640x480,1280x720\" autoStart = \"false\" showButton = \"true\" showCloseButton = \"true\" publishWindowVisible = \"true\" viewerWindowMaxed = \"false\" viewerWindowLocation = \"top\" camKeyFrameInterval = \"30\" camModeFps = \"10\" camQualityBandwidth = \"0\" camQualityPicture = \"90\" smoothVideo=\"false\" applyConvolutionFilter=\"false\" convolutionFilter=\"-1, 0, -1, 0, 6, 0, -1, 0, -1\" filterBias=\"0\" filterDivisor=\"4\" enableH264 = \"true\" h264Level = \"2.1\" h264Profile = \"main\" displayAvatar = \"false\" /> \
+    <module name=\"WhiteboardModule\" url=\"http://192.168.0.172/client/WhiteboardModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" dependsOn=\"PresentModule\" /> \
+    <module name=\"PresentModule\" url=\"http://192.168.0.172/client/PresentModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172\" showPresentWindow=\"true\" showWindowControls=\"true\" dependsOn=\"ViewersModule\" /> \
+    <module name=\"VideodockModule\" url=\"http://192.168.0.172/client/VideodockModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" dependsOn=\"VideoconfModule, ViewersModule\" autoDock=\"true\" showControls=\"true\" maximizeWindow=\"false\" position=\"bottom-right\" width=\"172\" height=\"179\" layout=\"smart\" oneAlwaysBigger=\"false\" /> \
+    <module name=\"LayoutModule\" url=\"http://192.168.0.172/client/LayoutModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" layoutConfig=\"http://192.168.0.172/client/conf/layout.xml\" enableEdit=\"true\" /> \
+  </modules> \
+</config>";
+          
+$configXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\
+<config>\
+<localeversion suppressWarning=\"false\">0.8</localeversion>\
+<version>4084-2013-01-30</version>\
+<help url=\"http://192.168.0.172/help.html\"/>\
+<porttest host=\"192.168.0.172\" application=\"video\" timeout=\"10000\"/>\
+<application uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172/bigbluebutton/api/enter\"/>\
+<language userSelectionEnabled=\"true\"/>\
+<skinning enabled=\"true\" url=\"http://192.168.0.172/client/branding/css/BBBDefault.css.swf\"/>\
+<layout showLogButton=\"false\" showVideoLayout=\"false\" showResetLayout=\"true\" defaultLayout=\"Default\" showToolbar=\"true\" showFooter=\"true\" showHelpButton=\"true\" showLogoutWindow=\"true\"/>\
+<modules>\
+<module name=\"ViewersModule\" url=\"http://192.168.0.172/client/ViewersModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172/bigbluebutton/api/enter\" allowKickUser=\"false\" /> \
+<module name=\"ListenersModule\" url=\"http://192.168.0.172/client/ListenersModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" recordingHost=\"http://192.168.0.172\" position=\"bottom-left\" /> \
+<module name=\"PhoneModule\" url=\"http://192.168.0.172/client/PhoneModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/sip\" autoJoin=\"true\" skipCheck=\"false\" showButton=\"true\" enabledEchoCancel=\"true\" dependsOn=\"ViewersModule\" /> \
+<module name=\"LayoutModule\" url=\"http://192.168.0.172/client/LayoutModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" layoutConfig=\"http://192.168.0.172/client/conf/layout.xml\" enableEdit=\"true\" /> \
+</modules>\
+</config>";
+          
 			$('#reload').click(function () {
 				$('#bbb')[0].reset();
 			});
@@ -121,6 +160,7 @@
 				$("#advanced_form").append('<tr><td id="field">Meta Description</td><td><input type="text"  size="60" id="meta_description" value=""/></td></tr>');
 				$("#advanced_form").append('<tr><td id="field">Meta Test</td><td><input type="text"  size="60" id="meta_test" value=""/></td></tr>');
 				$("#advanced_form").append('<tr><td id="field">RecordID</td><td><input type="text"  size="60" id="recordID" value=""/></td></tr>');
+                $("#advanced_form").append('<tr><td id="field">Layout tokenID</td><td><input type="text"  size="60" id="tokenID" value=""/></td></tr>');
 			});
 			
 			$('#hide').click(function () {
@@ -150,45 +190,49 @@
 					var $meta_test = $.URLEncode( $("#meta_test").val() );
 					var $meta_description = $.URLEncode( $("#meta_description").val() );
 					var $recordID = $.URLEncode( $("#recordID").val() );
+                    var $tokenID = $.URLEncode( $("#tokenID").val() );
 					
 					//Creates the URLs
 					var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&welcome=" + $welcome;
-					$params += "&logoutURL=" + $logoutURL + "&maxParticipants=" + $maxParticipants + "&voiceBridge=" + $voiceBridge + "&dialNumber=" + $dialNumber;
+					$params += "&logoutURL=" + $logoutURL + "&maxParticipants=" + $maxParticipants + "&voiceBridge=" + $voiceBridge + "&dialNumber=" + $dialNumber + "&meta_test=" + $meta_test + "&meta_description=" + $meta_description;
 					var $createURL = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
 
-					var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&welcome=" + $welcome;
+					$params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&welcome=" + $welcome;
 					$params += "&logoutURL=" + $logoutURL + "&maxParticipants=" + $maxParticipants + "&voiceBridge=" + $voiceBridge + "&dialNumber=" + $dialNumber + "&meta_test=" + $meta_test + "&meta_description=" + $meta_description + "&record=true";
 					var $createURLwithRecording = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
                                         
-                                        $params = "meetingID=" + $meetingID;
-                                        var $getRecordingsURL = $server + "getRecordings?" + $params + "&checksum=" + $.sha1("getRecordings" + $params + $salt);				
+                    $params = "recordID=" + $recordID + "&publish=true";
+                    var $publishRecordingsURL = $server + "publishRecordings?" + $params + "&checksum=" + $.sha1("getRecordings" + $params + $salt);				
 
-                                        $params = "recordID=" + $recordID + "&publish=true";
-                                        var $publishRecordingsURL = $server + "publishRecordings?" + $params + "&checksum=" + $.sha1("publishRecordings" + $params + $salt);				
-
-                                        $params = "recordID=" + $recordID + "&publish=false";
-                                        var $unpublishRecordingsURL = $server + "publishRecordings?" + $params + "&checksum=" + $.sha1("publishRecordings" + $params + $salt);
+                    $params = "recordID=" + $recordID + "&publish=false";
+                    var $unpublishRecordingsURL = $server + "publishRecordings?" + $params + "&checksum=" + $.sha1("getRecordings" + $params + $salt);
                                         
-                                        $params = "recordID=" + $recordID;
-                                        var $deleteRecordingsURL = $server + "deleteRecordings?" + $params + "&checksum=" + $.sha1("deleteRecordings" + $params + $salt);				
+                    $params = "recordID=" + $recordID;
+                    var $deleteRecordingsURL = $server + "deleteRecordings?" + $params + "&checksum=" + $.sha1("getRecordings" + $params + $salt);				
 
+                    $params = "meetingID=" + $meetingID + "&password=" + $moderatorPW + "&fullName=" + $userName + "&userID=" + $userID + "&configToken=" + $tokenID;
+                    var $joinModeratorURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+                    
+                    $params = "meetingID=" + $meetingID + "&password=" + $attendeePW + "&fullName=" + $userName + "&userID=" + $userID + "&configToken=" + $tokenID;
+                    var $joinAttendeeURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
 
 				}
 				else {
-					var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW;
+	                //Creates the URLs          
+				    var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW;
 					var $createURL = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
 
-					var $params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&record=true";
+					$params = "name=" + $meetingName + "&meetingID=" + $meetingID + "&moderatorPW=" + $moderatorPW + "&attendeePW=" + $attendeePW + "&record=true";
 					var $createURLwithRecording = $server + "create?" + $params + "&checksum=" + $.sha1("create" + $params + $salt);
+					
+	                $params = "meetingID=" + $meetingID + "&password=" + $moderatorPW + "&fullName=" + $userName + "&userID=" + $userID;
+	                var $joinModeratorURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+	                
+	                $params = "meetingID=" + $meetingID + "&password=" + $attendeePW + "&fullName=" + $userName + "&userID=" + $userID;
+	                var $joinAttendeeURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
+					
 				}
 				
-				
-				//Creates the URLs			
-				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW + "&fullName=" + $userName + "&userID=" + $userID;
-				var $joinModeratorURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
-				
-				$params = "meetingID=" + $meetingID + "&password=" + $attendeePW + "&fullName=" + $userName + "&userID=" + $userID;
-				var $joinAttendeeURL = $server + "join?" + $params + "&checksum=" + $.sha1("join" + $params + $salt);
 				
 				$params = "meetingID=" + $meetingID;
 				var $isMeetingRunningURL = $server + "isMeetingRunning?" + $params + "&checksum=" + $.sha1("isMeetingRunning" + $params + $salt);
@@ -196,13 +240,25 @@
 				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW;
 				var $getMeetingInfoURL = $server + "getMeetingInfo?" + $params + "&checksum=" + $.sha1("getMeetingInfo" + $params + $salt);
 				
-				$params = "random=" + $meetingID;
+				$params = "";
 				var $getMeetingsURL = $server + "getMeetings?" + $params + "&checksum=" + $.sha1("getMeetings" + $params + $salt);
 				
 				$params = "meetingID=" + $meetingID + "&password=" + $moderatorPW;
 				var $endURL = $server + "end?" + $params + "&checksum=" + $.sha1("end" + $params + $salt);
 				
-				
+                $params = "meetingID=" + $meetingID;
+                var $getRecordingsURL = $server + "getRecordings?" + $params + "&checksum=" + $.sha1("getRecordings" + $params + $salt);
+
+                $params = "meetingID=";
+                var $getAllRecordingsURL = $server + "getRecordings?" + $params + "&checksum=" + $.sha1("getRecordings" + $params + $salt);
+                
+                //$configXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><config></config>";
+                $params = "meetingID=" + $meetingID + "&configXML=" + $.URLEncode( $configXML );
+                //var $getSetConfigXMLURL = $server + "setConfigXML?" + $params + "&checksum=" + $.sha1( $meetingID + $configXML + $salt);
+                var $getSetConfigXMLURL = $server + "setConfigXML?" + $params + "&checksum=" + $.sha1( decodeURIComponent($meetingID) + decodeURIComponent($configXML) + $salt);
+                console.debug("meetingID: [" + decodeURIComponent($meetingID) + "]");
+                console.debug("configXML: [" + decodeURIComponent($configXML) + "]");
+
 				//Displays the links in a table
 				$("#links_table").remove();		//if the tables already exists it removes it
 				$("#links").append('<table id="links_table"></table>');
@@ -211,18 +267,20 @@
 				$("#links_table").append('<tr><td>Join as Moderator</td> <td><a href="' + $joinModeratorURL + '" target="_blank">' + $joinModeratorURL + '</a></td>');
 				$("#links_table").append('<tr><td>Join as Attendee</td> <td><a href="' + $joinAttendeeURL + '" target="_blank">' + $joinAttendeeURL + '</a></td>');
 				$("#links_table").append('<tr><td>isMeetingRunning</td> <td><a href="' + $isMeetingRunningURL + '" target="_blank">' + $isMeetingRunningURL + '</a></td>');
-				$("#links_table").append('<tr><td>getMeetingInfo</td> <td><a href="' + $getMeetingInfoURL + '" target="_blank">' + $getMeetingInfoURL + '</a></td>');
-				$("#links_table").append('<tr><td>getMeetings</td> <td><a href="' + $getMeetingsURL + '" target="_blank">' + $getMeetingsURL + '</a></td>');
-				$("#links_table").append('<tr><td>end</td> <td><a href="' + $endURL + '" target="_blank">' + $endURL + '</a></td>');
-				if ($("#advanced_form").length){
-                                    $("#links_table").append('<tr><td>getRecordings</td> <td><a href="' + $getRecordingsURL + '" target="_blank">' + $getRecordingsURL + '</a></td>');
-                                    
-                                    if ( $recordID ){
-                                        $("#links_table").append('<tr><td>setPublishRecordings[publish]</td> <td><a href="' + $publishRecordingsURL + '" target="_blank">' + $publishRecordingsURL + '</a></td>');
-                                        $("#links_table").append('<tr><td>setPublishRecordings[unpublish]</td> <td><a href="' + $unpublishRecordingsURL + '" target="_blank">' + $unpublishRecordingsURL + '</a></td>');
-                                        $("#links_table").append('<tr><td>deleteRecordings</td> <td><a href="' + $deleteRecordingsURL + '" target="_blank">' + $deleteRecordingsURL + '</a></td>');
-                                    }
-                                }
+				$("#links_table").append('<tr><td>Get Meeting Info</td> <td><a href="' + $getMeetingInfoURL + '" target="_blank">' + $getMeetingInfoURL + '</a></td>');
+				$("#links_table").append('<tr><td>Get Meetings</td> <td><a href="' + $getMeetingsURL + '" target="_blank">' + $getMeetingsURL + '</a></td>');
+				$("#links_table").append('<tr><td>End</td> <td><a href="' + $endURL + '" target="_blank">' + $endURL + '</a></td>');
+                $("#links_table").append('<tr><td>Get Recordings for ' + $meetingID + '</td> <td><a href="' + $getRecordingsURL + '" target="_blank">' + $getRecordingsURL + '</a></td>');
+                $("#links_table").append('<tr><td>Get All Recordings</td> <td><a href="' + $getAllRecordingsURL + '" target="_blank">' + $getAllRecordingsURL + '</a></td>');
+                $("#links_table").append('<tr><td>setConfigXML</td> <td><a href="' + $getSetConfigXMLURL + '" target="_blank">' + $getSetConfigXMLURL + '</a></td>');
+
+                if ($("#advanced_form").length){
+                   if ( $recordID ){
+                      $("#links_table").append('<tr><td>setPublishRecordings[publish]</td> <td><a href="' + $publishRecordingsURL + '" target="_blank">' + $publishRecordingsURL + '</a></td>');
+                      $("#links_table").append('<tr><td>setPublishRecordings[unpublish]</td> <td><a href="' + $unpublishRecordingsURL + '" target="_blank">' + $unpublishRecordingsURL + '</a></td>');
+                      $("#links_table").append('<tr><td>deleteRecordings</td> <td><a href="' + $deleteRecordingsURL + '" target="_blank">' + $deleteRecordingsURL + '</a></td>');
+                   }
+                }
 				
 				//alert('Handler for .submit() called.' + $server);
 				//return false;				
