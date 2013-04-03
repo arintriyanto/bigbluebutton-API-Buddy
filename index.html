@@ -116,27 +116,28 @@
     </div>
 
     <script type="text/javascript">
-        var $configXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> \
+        var $configXML = "\
+<?xml version=\"1.0\" encoding=\"UTF-8\"?> \
 <config> \
   <localeversion suppressWarning=\"false\">0.8</localeversion> \
   <version>4084-2013-01-30</version> \
-  <help url=\"http://192.168.0.172/help.html\"/> \
-  <porttest host=\"192.168.0.172\" application=\"video\" timeout=\"10000\"/> \
-  <application uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172/bigbluebutton/api/enter\" /> \
+  <help url=\"http://192.168.0.158/help.html\"/> \
+  <porttest host=\"192.168.0.158\" application=\"video\" timeout=\"10000\"/> \
+  <application uri=\"rtmp://192.168.0.158/bigbluebutton\" host=\"http://192.168.0.158/bigbluebutton/api/enter\" /> \
   <language userSelectionEnabled=\"true\" /> \
-  <skinning enabled=\"true\" url=\"http://192.168.0.172/client/branding/css/BBBDefault.css.swf\" /> \
+  <skinning enabled=\"true\" url=\"http://192.168.0.158/client/branding/css/BBBDefault.css.swf\" /> \
   <layout showLogButton=\"false\" showVideoLayout=\"false\" showResetLayout=\"true\" defaultLayout=\"Default\" showToolbar=\"true\" showFooter=\"true\" showHelpButton=\"true\" showLogoutWindow=\"true\"/> \
   <modules> \
-    <module name=\"ChatModule\" url=\"http://192.168.0.172/client/ChatModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" dependsOn=\"ViewersModule\" translationOn=\"false\" translationEnabled=\"false\" privateEnabled=\"true\"  position=\"top-right\"/> \
-    <module name=\"ViewersModule\" url=\"http://192.168.0.172/client/ViewersModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172/bigbluebutton/api/enter\" allowKickUser=\"false\" /> \
-    <module name=\"ListenersModule\" url=\"http://192.168.0.172/client/ListenersModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" recordingHost=\"http://192.168.0.172\" position=\"bottom-left\" /> \
-    <module name=\"DeskShareModule\" url=\"http://192.168.0.172/client/DeskShareModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/deskShare\" autoStart=\"false\" /> \
-    <module name=\"PhoneModule\" url=\"http://192.168.0.172/client/PhoneModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/sip\" autoJoin=\"true\" skipCheck=\"false\" showButton=\"true\" enabledEchoCancel=\"true\" dependsOn=\"ViewersModule\" /> \
-    <module name=\"VideoconfModule\" url=\"http://192.168.0.172/client/VideoconfModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/video\" dependson = \"ViewersModule\" videoQuality = \"100\" presenterShareOnly = \"false\" controlsForPresenter = \"false\" resolutions = \"320x240,640x480,1280x720\" autoStart = \"false\" showButton = \"true\" showCloseButton = \"true\" publishWindowVisible = \"true\" viewerWindowMaxed = \"false\" viewerWindowLocation = \"top\" camKeyFrameInterval = \"30\" camModeFps = \"10\" camQualityBandwidth = \"0\" camQualityPicture = \"90\" smoothVideo=\"false\" applyConvolutionFilter=\"false\" convolutionFilter=\"-1, 0, -1, 0, 6, 0, -1, 0, -1\" filterBias=\"0\" filterDivisor=\"4\" enableH264 = \"true\" h264Level = \"2.1\" h264Profile = \"main\" displayAvatar = \"false\" /> \
-    <module name=\"WhiteboardModule\" url=\"http://192.168.0.172/client/WhiteboardModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" dependsOn=\"PresentModule\" /> \
-    <module name=\"PresentModule\" url=\"http://192.168.0.172/client/PresentModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172\" showPresentWindow=\"true\" showWindowControls=\"true\" dependsOn=\"ViewersModule\" /> \
-    <module name=\"VideodockModule\" url=\"http://192.168.0.172/client/VideodockModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" dependsOn=\"VideoconfModule, ViewersModule\" autoDock=\"true\" showControls=\"true\" maximizeWindow=\"false\" position=\"bottom-right\" width=\"172\" height=\"179\" layout=\"smart\" oneAlwaysBigger=\"false\" /> \
-    <module name=\"LayoutModule\" url=\"http://192.168.0.172/client/LayoutModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" layoutConfig=\"http://192.168.0.172/client/conf/layout.xml\" enableEdit=\"true\" /> \
+    <module name=\"ChatModule\" url=\"http://192.168.0.158/client/ChatModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" dependsOn=\"ViewersModule\" translationOn=\"false\" translationEnabled=\"false\" privateEnabled=\"true\"  position=\"top-right\"/> \
+    <module name=\"ViewersModule\" url=\"http://192.168.0.158/client/ViewersModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" host=\"http://192.168.0.158/bigbluebutton/api/enter\" allowKickUser=\"false\" /> \
+    <module name=\"ListenersModule\" url=\"http://192.168.0.158/client/ListenersModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" recordingHost=\"http://192.168.0.158\" position=\"bottom-left\" /> \
+    <module name=\"DeskShareModule\" url=\"http://192.168.0.158/client/DeskShareModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/deskShare\" autoStart=\"false\" /> \
+    <module name=\"PhoneModule\" url=\"http://192.168.0.158/client/PhoneModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/sip\" autoJoin=\"true\" skipCheck=\"false\" showButton=\"true\" enabledEchoCancel=\"true\" dependsOn=\"ViewersModule\" /> \
+    <module name=\"VideoconfModule\" url=\"http://192.168.0.158/client/VideoconfModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/video\" dependson = \"ViewersModule\" videoQuality = \"100\" presenterShareOnly = \"false\" controlsForPresenter = \"false\" resolutions = \"320x240,640x480,1280x720\" autoStart = \"false\" showButton = \"true\" showCloseButton = \"true\" publishWindowVisible = \"true\" viewerWindowMaxed = \"false\" viewerWindowLocation = \"top\" camKeyFrameInterval = \"30\" camModeFps = \"10\" camQualityBandwidth = \"0\" camQualityPicture = \"90\" smoothVideo=\"false\" applyConvolutionFilter=\"false\" convolutionFilter=\"-1, 0, -1, 0, 6, 0, -1, 0, -1\" filterBias=\"0\" filterDivisor=\"4\" enableH264 = \"true\" h264Level = \"2.1\" h264Profile = \"main\" displayAvatar = \"false\" /> \
+    <module name=\"WhiteboardModule\" url=\"http://192.168.0.158/client/WhiteboardModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" dependsOn=\"PresentModule\" /> \
+    <module name=\"PresentModule\" url=\"http://192.168.0.158/client/PresentModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" host=\"http://192.168.0.158\" showPresentWindow=\"true\" showWindowControls=\"true\" dependsOn=\"ViewersModule\" /> \
+    <module name=\"VideodockModule\" url=\"http://192.168.0.158/client/VideodockModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" dependsOn=\"VideoconfModule, ViewersModule\" autoDock=\"true\" showControls=\"true\" maximizeWindow=\"false\" position=\"bottom-right\" width=\"172\" height=\"179\" layout=\"smart\" oneAlwaysBigger=\"false\" /> \
+    <module name=\"LayoutModule\" url=\"http://192.168.0.158/client/LayoutModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" layoutConfig=\"http://192.168.0.158/client/conf/layout.xml\" enableEdit=\"true\" /> \
   </modules> \
 </config>";
 
@@ -144,17 +145,17 @@
 <config>\
 <localeversion suppressWarning=\"false\">0.8</localeversion>\
 <version>4084-2013-01-30</version>\
-<help url=\"http://192.168.0.172/help.html\"/>\
-<porttest host=\"192.168.0.172\" application=\"video\" timeout=\"10000\"/>\
-<application uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172/bigbluebutton/api/enter\"/>\
+<help url=\"http://192.168.0.158/help.html\"/>\
+<porttest host=\"192.168.0.158\" application=\"video\" timeout=\"10000\"/>\
+<application uri=\"rtmp://192.168.0.158/bigbluebutton\" host=\"http://192.168.0.158/bigbluebutton/api/enter\"/>\
 <language userSelectionEnabled=\"true\"/>\
-<skinning enabled=\"true\" url=\"http://192.168.0.172/client/branding/css/BBBDefault.css.swf\"/>\
+<skinning enabled=\"true\" url=\"http://192.168.0.158/client/branding/css/BBBDefault.css.swf\"/>\
 <layout showLogButton=\"false\" showVideoLayout=\"false\" showResetLayout=\"true\" defaultLayout=\"Default\" showToolbar=\"true\" showFooter=\"true\" showHelpButton=\"true\" showLogoutWindow=\"true\"/>\
 <modules>\
-<module name=\"ViewersModule\" url=\"http://192.168.0.172/client/ViewersModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" host=\"http://192.168.0.172/bigbluebutton/api/enter\" allowKickUser=\"false\" /> \
-<module name=\"ListenersModule\" url=\"http://192.168.0.172/client/ListenersModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" recordingHost=\"http://192.168.0.172\" position=\"bottom-left\" /> \
-<module name=\"PhoneModule\" url=\"http://192.168.0.172/client/PhoneModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/sip\" autoJoin=\"true\" skipCheck=\"false\" showButton=\"true\" enabledEchoCancel=\"true\" dependsOn=\"ViewersModule\" /> \
-<module name=\"LayoutModule\" url=\"http://192.168.0.172/client/LayoutModule.swf?v=4084\" uri=\"rtmp://192.168.0.172/bigbluebutton\" layoutConfig=\"http://192.168.0.172/client/conf/layout.xml\" enableEdit=\"true\" /> \
+<module name=\"ViewersModule\" url=\"http://192.168.0.158/client/ViewersModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" host=\"http://192.168.0.158/bigbluebutton/api/enter\" allowKickUser=\"false\" /> \
+<module name=\"ListenersModule\" url=\"http://192.168.0.158/client/ListenersModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" recordingHost=\"http://192.168.0.158\" position=\"bottom-left\" /> \
+<module name=\"PhoneModule\" url=\"http://192.168.0.158/client/PhoneModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/sip\" autoJoin=\"true\" skipCheck=\"false\" showButton=\"true\" enabledEchoCancel=\"true\" dependsOn=\"ViewersModule\" /> \
+<module name=\"LayoutModule\" url=\"http://192.168.0.158/client/LayoutModule.swf?v=4084\" uri=\"rtmp://192.168.0.158/bigbluebutton\" layoutConfig=\"http://192.168.0.158/client/conf/layout.xml\" enableEdit=\"true\" /> \
 </modules>\
 </config>";
 
